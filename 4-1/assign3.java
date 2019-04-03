@@ -2,7 +2,7 @@
 
 import java.util.Arrays;
 
-public class assign4{
+public class assign3{
 	static int min=1000;
 	static int max=100000;
 	static int arr_random[]=new int[max];
@@ -16,25 +16,25 @@ public class assign4{
 		System.out.print("Bubble\t");
 	 		for(int i=min;i<=max;i*=10){
 			for(int k=0;k<i;k++) temp[k]=arr_random[k];
-			System.out.print("\t\t"+String.format("%.3f",bubble_sort(temp,i)));
+			System.out.print("\t\t"+String.format("%.5f",bubble_sort(temp,i)));
 			for(int k=max-i,q=0;k<max;k++,q++) temp[q]=arr_reverse[k];
-			System.out.print("\t\t"+String.format("%.3f",bubble_sort(temp,i)));
+			System.out.print("\t\t"+String.format("%.5f",bubble_sort(temp,i)));
 		}
 		System.out.println();
 		System.out.print("Insertion");
 		for(int i=min;i<=max;i*=10){
 			for(int k=0;k<i;k++) temp[k]=arr_random[k];
-			System.out.print("\t\t"+String.format("%.3f",insertion_sort(temp,i)));
+			System.out.print("\t\t"+String.format("%.5f",insertion_sort(temp,i)));
 			for(int k=max-i,q=0;k<max;k++,q++) temp[q]=arr_reverse[k];
-			System.out.print("\t\t"+String.format("%.3f",insertion_sort(temp,i)));
+			System.out.print("\t\t"+String.format("%.5f",insertion_sort(temp,i)));
 		}
 		System.out.println();
 		System.out.print("Selection");
 		for(int i=min;i<=max;i*=10){
 			for(int k=0;k<i;k++) temp[k]=arr_random[k];
-			System.out.print("\t\t"+String.format("%.3f",selection_sort(temp,i)));
+			System.out.print("\t\t"+String.format("%.5f",selection_sort(temp,i)));
 			for(int k=max-i,q=0;k<max;k++,q++) temp[q]=arr_reverse[k];
-			System.out.print("\t\t"+String.format("%.3f",selection_sort(temp,i)));
+			System.out.print("\t\t"+String.format("%.5f",selection_sort(temp,i)));
 		}
 		System.out.println();
 		System.out.print("Merge\t");
@@ -54,8 +54,8 @@ public class assign4{
 				end = System.currentTimeMillis();
 				avg1+=(end-start)/1000.0;
 			}
-			System.out.print("\t\t"+String.format("%.3f",avg/10.0));
-			System.out.print("\t\t"+String.format("%.3f",avg1/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg1/10.0));
 		}
 		System.out.println();
 		System.out.print("Quick1\t");
@@ -76,8 +76,8 @@ public class assign4{
 				end = System.currentTimeMillis();
 				avg1+=(end-start)/1000.0;
 			}
-			System.out.print("\t\t"+String.format("%.3f",avg/10.0));
-			System.out.print("\t\t"+String.format("%.3f",avg1/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg1/10.0));
 		}
 		System.out.println();
 		System.out.print("Quick2\t");
@@ -97,8 +97,8 @@ public class assign4{
 				end = System.currentTimeMillis();
 				avg1+=(end-start)/1000.0;
 			}
-			System.out.print("\t\t"+String.format("%.3f",avg/10.0));
-			System.out.print("\t\t"+String.format("%.3f",avg1/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg1/10.0));
 		}
 		System.out.println();
 		System.out.print("Quick3\t");
@@ -118,8 +118,8 @@ public class assign4{
 				end = System.currentTimeMillis();
 				avg1+=(end-start)/1000.0;
 			}
-			System.out.print("\t\t"+String.format("%.3f",avg/10.0));
-			System.out.print("\t\t"+String.format("%.3f",avg1/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg1/10.0));
 		}
 		System.out.println();
 		System.out.print("Heap\t");
@@ -139,8 +139,8 @@ public class assign4{
 				end = System.currentTimeMillis();
 				avg1+=(end-start)/1000.0;
 			}
-			System.out.print("\t\t"+String.format("%.3f",avg/10.0));
-			System.out.print("\t\t"+String.format("%.3f",avg1/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg1/10.0));
 			}
 		System.out.println();
 		System.out.print("Library\t");
@@ -148,20 +148,20 @@ public class assign4{
 		{
 			double avg=0.0,avg1=0.0;
 			for(int j=0;j<10;j++)
-			{
-				for(int k=0;k<i;k++) temp[k]=arr_random[k];
+			{int temp1[]=new int [i];
+				for(int k=0;k<i;k++) temp1[k]=arr_random[k];
 				long start = System.currentTimeMillis();
-				Arrays.sort(temp);
+				Arrays.sort(temp1);
 				long end = System.currentTimeMillis();
 				avg+=(end-start)/1000.0;
-				for(int k=max-i,q=0;k<max;k++,q++) temp[q]=arr_reverse[k];
+				for(int k=max-i,q=0;k<max;k++,q++) temp1[q]=arr_reverse[k];
 				start = System.currentTimeMillis();
-				Arrays.sort(temp);
+				Arrays.sort(temp1);
 				end = System.currentTimeMillis();
 				avg1+=(end-start)/1000.0;
 			}
-			System.out.print("\t\t"+String.format("%.3f",avg/10.0));
-			System.out.print("\t\t"+String.format("%.3f",avg1/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg/10.0));
+			System.out.print("\t\t"+String.format("%.5f",avg1/10.0));
 			}
 	}
 	static void random(int a, int[] arr)
