@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class assign4 {
 	static webLog list[];
 	static webLog list1[]=new webLog [200000];
+	static String msg;
 	static int count =0;
 	static Scanner scan = new Scanner(System.in);
 	public static void main(String[] args) {
@@ -16,10 +17,10 @@ public class assign4 {
 			System.out.print("$ ");
 			String message = scan.next();
 			if (message.contentEquals("read"))
-			{String msg = scan.next();
+			{msg = scan.next();
 			read(msg);}
 			else if (message.contentEquals("sort"))
-			{String msg = scan.next();
+			{msg = scan.next();
 			sort(msg);}
 			else if (message.contentEquals("print"))
 			print();
@@ -55,11 +56,27 @@ public class assign4 {
 		Arrays.sort(list,new webLogIPComparator());
 	}
 	static void print() {
-		for(int i=0;i<count;i++)
-			{System.out.println("Time : "+list[i].Date);
-			System.out.println("IP : "+list[i].IP);
-			System.out.println("URL : "+list[i].URL);
-			System.out.println("Status : "+list[i].Status);	
-			}
+		if(msg.equals("-ip"))
+		{for(int i=0;i<count;i++)
+			{System.out.println(list[i].IP);
+			System.out.println("\tTime : "+list[i].Date);
+			System.out.println("\tURL : "+list[i].URL);
+			System.out.println("\tStatus : "+list[i].Status);	
+			}}
+		else if(msg.equals("-t"))
+		{for(int i=0;i<count;i++)
+			{System.out.println(list[i].Date);
+			System.out.println("\tIP : "+list[i].IP);
+			System.out.println("\tURL : "+list[i].URL);
+			System.out.println("\tStatus : "+list[i].Status);	
+			}}
+		else
+		{for(int i=0;i<count;i++)
+		{System.out.println("Time : "+list[i].Date);
+		System.out.println("IP : "+list[i].IP);
+		System.out.println("URL : "+list[i].URL);
+		System.out.println("Status : "+list[i].Status);	
+		}}
+
 	}
 }

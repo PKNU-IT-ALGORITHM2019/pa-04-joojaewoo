@@ -11,7 +11,7 @@ class webLog implements Comparable<webLog> {
 	public webLog(String a,String b,String c,String d)
 	{
 		IP=new String(a);
-		Date=new String(b);
+		Date=new String(b.substring(1));
 		URL=new String(c);
 		Status=new String(d);
 		String temp=b.substring(1,b.indexOf(":"));
