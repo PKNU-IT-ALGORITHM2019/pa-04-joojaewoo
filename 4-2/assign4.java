@@ -6,8 +6,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class assign4 {
-	static webLog list[];
-	static webLog list1[]=new webLog [200000];
+	static webLog list[]=new webLog [200000];
 	static String msg;
 	static int count =0;
 	static Scanner scan = new Scanner(System.in);
@@ -37,21 +36,18 @@ public class assign4 {
 				buffer = infile.nextLine();
 				if(!buffer.contentEquals(""))
 				{String temp []=buffer.split(",");
-				list1[count]=new webLog(temp[0],temp[1],temp[2],temp[3]);
+				list[count]=new webLog(temp[0],temp[1],temp[2],temp[3]);
 				count++;
 				}
 			}
 			infile.close();
-			list =new webLog[count];
-			for(int i=0;i<count;i++)
-				list[i]=list1[i];
 		}
 		catch(FileNotFoundException e) {System.out.println("No file");
 		System.exit(0);}
 	}
 	static void sort(String str) {
 		if(str.equals("-t"))
-		Arrays.sort(list);
+		Arrays.sort(list, 0, count-1);
 		else if(str.equals("-ip"))
 		Arrays.sort(list,new webLogIPComparator());
 	}
